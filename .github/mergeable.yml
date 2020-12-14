@@ -3,6 +3,10 @@ version: 2
 mergeable:
   - when: pull_request.*
     validate:
+      - do: baseRef
+        must_include:
+           regex: '(^|[-\/])(major|release|minor|feature|patch|issue|hotfix|dependabot\/|whitesource)[-\/](\b[A-Z][A-Z0-9]+-\d+\b).+$'
+           message: 'Custom message...'
       - do: description
         must_include:
           regex: \b[A-Z][A-Z0-9]+-\d+\b
