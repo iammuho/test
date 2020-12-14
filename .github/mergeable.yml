@@ -3,7 +3,7 @@ version: 2
 mergeable:
   - when: pull_request.*
     validate:
-      - do: branch
+      - do: headRef
         must_include:
            regex: '(^|[-\/])(major|release|minor|feature|patch|issue|hotfix|dependabot\/|whitesource)[-\/](\b[A-Z][A-Z0-9]+-\d+\b).+$'
            message: 'Custom message...'
