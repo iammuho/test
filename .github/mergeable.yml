@@ -4,7 +4,7 @@ mergeable:
     validate:
       - do: title
         # Enforce semantic release convention.
-        must_exclude:
+        must_include:
           regex: \[ \]
           message: Semantic release conventions must be followed.
         # All todo check boxes must be checked.
