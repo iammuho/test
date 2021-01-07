@@ -4,8 +4,8 @@ mergeable:
     validate:
       - do: title
         # Enforce semantic release convention.
-        must_include:
-          regex: ^(feat|docs|chore|fix|refactor|test|style|perf)(\(\w+\))?:.+$
+        must_exclude:
+          regex: \[ \]
           message: Semantic release conventions must be followed.
         # All todo check boxes must be checked.
       - do: description
