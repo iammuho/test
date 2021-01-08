@@ -10,3 +10,9 @@ mergeable:
       - do: title
         must_exclude:
           regex: ^\[WIP\]
+  - when: pull_request.*, pull_request_review.*
+    validate:
+      - do: description
+        no_empty:
+          enabled: true
+          message: Description matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
