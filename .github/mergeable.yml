@@ -4,7 +4,5 @@ mergeable:
     name: "Greet a contributor"
     validate: []
     pass:
-      - do: comment
-        payload:
-          body: >
-            Thanks for creating a pull request! A maintainer will review your changes shortly. Please don't be discouraged if it takes a while.
+      - do: assign
+        assignees: [ 'iammuho' ]
