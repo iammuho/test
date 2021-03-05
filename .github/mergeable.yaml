@@ -47,7 +47,7 @@ mergeable:
              regex: 'type: [a-z0-9]+'
              regex_flag: 'none'
              message: 'You need to add type label for your PR'
-  - when: pull_request.opened
+  - when: pull_request.*
     name: "Assign reviewer"
     validate: []
     pass:
