@@ -1,8 +1,14 @@
 version: 2
 mergeable:
-  - when: pull_request.*
-    name: "Greet a contributor"
-    validate: []
-    pass:
-      - do: assign
-        assignees: [ 'iammuho' ]
+  - when: pull_request.*, pull_request_review.*
+    name: HelloTech approval
+    validate:
+      - do: approvals
+        min:
+          count: 1
+          message: 'Developers from all of the required teams, regarding to CODEOWNERS file, need to approve this PR'
+        required:
+          owners: true
+        block:
+          changes_requested: true
+          message: 'To merge this PR, you must complete the Change Requests'
