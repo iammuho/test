@@ -2,11 +2,5 @@
 #
 # Owners will be requested for review when someone opens a pull request.
 
-# HelloFresh
-*   @iammuho
-
-# GridDynamics
-*   @iammuho
-
 # Intellias
-*   @diegomarangoni @EvilCorpDev
+*   @lets-docker/test
