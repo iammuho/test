@@ -7,7 +7,7 @@ mergeable:
         min:
           count: 1
           message: 'Developers from all of the required teams, regarding to CODEOWNERS file, need to approve this PR'
-        required:
+        limit:
           owners: true
         block:
           changes_requested: true
