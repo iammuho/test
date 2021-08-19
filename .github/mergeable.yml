@@ -12,3 +12,21 @@ mergeable:
         block:
           changes_requested: true
           message: 'To merge this PR, you must complete the Change Requests'
+  - when: pull_request.opened, pull_request.reopened, pull_request.synchronize, pull_request.labeled, pull_request.unlabeled
+    name: 'Check tribe/squad labels'
+    filter:
+      - do: repository
+        topics:
+          must_include:
+            regex: '^mergeable-ownership-labels$'
+    validate:
+      - do: label
+        and:
+          - must_include:
+              regex: 'squad: [a-z]+[a-z\-]+'
+              regex_flag: 'none'
+              message: 'You need to add squad label for your PR'
+          - must_include:
+              regex: 'tribe: [a-z]+[a-z\-]+'
+              regex_flag: 'none'
+              message: 'You need to add tribe label for your PR'
